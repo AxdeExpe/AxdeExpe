@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-- 🔭 I’m currently working on "decentralized chat" (private) and "[!][Raspi-Cluster](https://github.com/AxdeExpe/Raspi-Cluster)"
+- 🔭 I’m currently working on "decentralized chat" (private) and "[!Raspi-Cluster](https://github.com/AxdeExpe/Raspi-Cluster)"
 - 👯 I’m looking to collaborate on interesting projects!
 - 📫 How to reach me: s83799@htw-dresden.de
 
