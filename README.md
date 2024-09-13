@@ -1,17 +1,3 @@
-### Hi there 👋
-
-I'm a passionate software developer with a love for creating innovative solutions to real-world problems. Welcome to my GitHub corner!
-
-- 🔭 I’m currently delving into the realm of "Decentralized Chat" (private repository)
-- 🌱 I’m continuously learning and exploring new technologies
-- 👯 I’m open to collaborating on exciting projects and contributing to the tech community
-
-### About Me
-
-I believe in the power of technology to drive positive change and improve lives. With a background in computer science and a knack for problem-solving, I enjoy diving deep into challenging projects and pushing the boundaries of what's possible.
-
-In my free time, you can find me tinkering with new coding languages, experimenting with algorithms, or exploring the outdoors for inspiration.
-
 ### Languages & Tools
 
 - [![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://github.com/AxdeExpe)
