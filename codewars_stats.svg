@@ -39,7 +39,7 @@
         <text x="180" y="165" font-weight="600" fill="#c4c4c4">#501897</text>
         
         <text x="30" y="190">Overall Rank:</text>
-        <text x="180" y="190" font-weight="600" fill="#c4c4c4">6 kyu (201 pts)</text>
+        <text x="180" y="190" font-weight="600" fill="#c4c4c4" font-size="12">6 kyu (201 pts)</text>
         
         <text x="30" y="215">Completed Katas:</text>
         <text x="180" y="215" font-weight="600" fill="#c4c4c4">16</text>
@@ -58,8 +58,8 @@
         <text x="400" y="140" font-weight="600" fill="#c4c4c4">7 kyu (21 pts)</text>
         
         
-        <text x="270" y="215">Authored Katas:</text>
-        <text x="400" y="215" font-weight="600" fill="#c4c4c4">0</text>
+        <text x="270" y="165">Authored Katas:</text>
+        <text x="400" y="165" font-weight="600" fill="#c4c4c4">0</text>
     </g>
     
     <!-- Dekorative Elemente -->
