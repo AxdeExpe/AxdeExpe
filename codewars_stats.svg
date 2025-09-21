@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="120">
+    <rect width="300" height="120" fill="#0e1116" rx="10" ry="10"/>
+    <text x="20" y="35" font-family="Verdana" font-size="16" fill="#ff4500">Codewars Stats</text>
+    <text x="20" y="60" font-family="Verdana" font-size="14" fill="#ffffff">Username: AxdeExpe</text>
+    <text x="20" y="80" font-family="Verdana" font-size="14" fill="#ffffff">Honor: 173</text>
+    <text x="20" y="100" font-family="Verdana" font-size="14" fill="#ffffff">Rank: 6 kyu</text>
+    <text x="150" y="100" font-family="Verdana" font-size="14" fill="#ffffff">Katas: 16</text>
+    <text x="20" y="115" font-family="Verdana" font-size="10" fill="#888888">Updated: 2025-09-21 16:26 UTC</text>
+</svg>
