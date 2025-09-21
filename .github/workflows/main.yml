@@ -1,6 +1,5 @@
 name: Update Codewars Stats
 
-# Trigger: alle Stunde + manuell auslösen
 on:
   schedule:
     - cron: '0 * * * *'  # jede Stunde
@@ -9,32 +8,28 @@ on:
 jobs:
   update-codewars:
     runs-on: ubuntu-latest
-
     steps:
-      # Repo auschecken
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      # Python einrichten
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      # Abhängigkeiten installieren
       - name: Install dependencies
         run: pip install requests
 
-      # SVG generieren
       - name: Generate Codewars SVG
         run: python scripts/generate_codewars_svg.py
 
-      # Änderungen committen & pushen
       - name: Commit & Push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add codewars_stats.svg
           git diff-index --quiet HEAD || git commit -m "Update Codewars stats"
-          git push https://$PAT_TOKEN@github.com/${{ github.repository }} HEAD:${{ github.ref }}
-
-
+          git push origin HEAD
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
