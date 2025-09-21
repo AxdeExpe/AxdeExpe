@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          token: ${{ secrets.PAT_TOKEN }}
-
+          # Verwende GITHUB_TOKEN statt PAT_TOKEN für checkout
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -31,8 +31,4 @@ jobs:
           git config --local user.name "GitHub Action"
           git add codewars_stats.svg
           git diff-index --quiet HEAD || git commit -m "Update Codewars stats"
-          git push origin HEAD
-        env:
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
-
-
+          git push
