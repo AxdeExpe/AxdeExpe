@@ -30,4 +30,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git add codewars_stats.svg
           git diff-index --quiet HEAD || git commit -m "Update Codewars stats"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
+          git push https://$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@github.com/${{ github.repository }} HEAD:${{ github.ref }}
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+
