@@ -29,9 +29,9 @@
 📍 Germany · Hybrid  
 📅 May 2025 – Today
 
-I contributed to the development and implementation of a software solution for masking database instances and tables, seamlessly integrated into a data load synchronization framework.  
+I contributed to the development and implementation of a software solution for masking snowflake database instances and tables, seamlessly integrated into a data load synchronization framework.  
 In addition, I supported data science tasks with a focus on **PII handling** and **intent analysis**.  
-I was also actively involved in a mid-sized software project, working on **feature implementation** and **unit tests**.  
+I am currently also actively involved in a mid-sized software project, working on **feature implementation** and **unit tests**.  
 
 ### <img src="fraunhofer.png" alt="Fraunhofer IVI Logo" width="30"/> Fraunhofer IVI — Student Assistant Software Development
 📍 Germany · On-site  
