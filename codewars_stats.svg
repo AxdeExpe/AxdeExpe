@@ -85,7 +85,7 @@
     <rect x="20" y="345" width="500" height="2" fill="url(#accentGradient)"/>
     <g font-family="JetBrains Mono, monospace" font-size="10" fill="#7d8590">
         <text x="40" y="362">AUTHORED: <tspan fill="#e6edf3" font-weight="600">0</tspan></text>
-        <text x="270" y="362" text-anchor="middle">UPDATED: 2025-09-25 16:58 UTC</text>
+        <text x="270" y="362" text-anchor="middle">UPDATED: 2025-09-25 16:59 UTC</text>
         <text x="480" y="362" text-anchor="end">RANK: <tspan fill="#e6edf3" font-weight="600">5 kyu</tspan></text>
     </g>
 </svg>
