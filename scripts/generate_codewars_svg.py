@@ -26,7 +26,21 @@ sorted_languages = sorted(
     reverse=True
 )
 
-# 2️⃣ SVG generieren mit detaillierten Statistiken
+# Top 5 Sprachen vorbereiten
+top_languages = []
+for lang, data in sorted_languages[:5]:
+    lang_name = lang.capitalize()
+    lang_rank = data.get("name", "Unknown")
+    lang_score = data.get("score", 0)
+    top_languages.append((lang_name, lang_rank, lang_score))
+
+# Aktuelles Datum und Uhrzeit
+current_time = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+
+# Fortschrittsbalken berechnen (vereinfachte Darstellung)
+progress_width = min(440, max(0, (rank_score / 1000) * 440)) if rank_score > 0 else 0
+
+# 2️⃣ SVG generieren mit dynamischen Daten
 svg_content = f'''<svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300">
     <defs>
         <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -59,35 +73,40 @@ svg_content = f'''<svg xmlns="http://www.w3.org/2000/svg" width="500" height="30
         <text x="30" y="85" font-size="16" font-weight="600" fill="#c4c4c4">Overview</text>
         
         <text x="30" y="115">Username:</text>
-        <text x="180" y="115" font-weight="600" fill="#c4c4c4">AxdeExpe</text>
+        <text x="180" y="115" font-weight="600" fill="#c4c4c4">{USERNAME}</text>
         
         <text x="30" y="140">Honor:</text>
-        <text x="180" y="140" font-weight="600" fill="#c4c4c4">173</text>
+        <text x="180" y="140" font-weight="600" fill="#c4c4c4">{honor}</text>
         
         <text x="30" y="165">Global Rank:</text>
-        <text x="180" y="165" font-weight="600" fill="#c4c4c4">#501897</text>
+        <text x="180" y="165" font-weight="600" fill="#c4c4c4">#{leaderboard_position if leaderboard_position != "N/A" else "N/A"}</text>
         
         <text x="30" y="190">Overall Rank:</text>
-        <text x="180" y="190" font-weight="600" fill="#c4c4c4" font-size="13">6 kyu</text>
-        <text x="180" y="205" font-weight="600" fill="#c4c4c4" font-size="12">(201 pts)</text>
+        <text x="180" y="190" font-weight="600" fill="#c4c4c4" font-size="13">{overall_rank}</text>
+        <text x="180" y="205" font-weight="600" fill="#c4c4c4" font-size="12">({rank_score} pts)</text>
         
         <text x="30" y="230">Completed Katas:</text>
-        <text x="180" y="230" font-weight="600" fill="#c4c4c4">16</text>
+        <text x="180" y="230" font-weight="600" fill="#c4c4c4">{completed_katas}</text>
     </g>
     
     <!-- Rechte Spalte - Sprachenstatistiken -->
     <g font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#f0f6fc">
         <text x="270" y="85" font-size="16" font-weight="600" fill="#c4c4c4">Top Languages</text>
         
-        <!-- Top 5 Sprachen anzeigen -->
-        <text x="270" y="115">Javascript:</text>
-        <text x="400" y="115" font-weight="600" fill="#c4c4c4">6 kyu (180 pts)</text>
+        <!-- Dynamische Sprachenanzeige -->'''
+
+# Top-Sprachen dynamisch einfügen
+y_pos = 115
+for i, (lang_name, lang_rank, lang_score) in enumerate(top_languages):
+    svg_content += f'''
+        <text x="270" y="{y_pos + i * 25}">{lang_name}:</text>
+        <text x="400" y="{y_pos + i * 25}" font-weight="600" fill="#c4c4c4">{lang_rank} ({lang_score} pts)</text>'''
+
+# Rest des SVG-Codes
+svg_content += f'''
         
-        <text x="270" y="140">Python:</text>
-        <text x="400" y="140" font-weight="600" fill="#c4c4c4">7 kyu (21 pts)</text>
-        
-        <text x="270" y="190">Authored Katas:</text>
-        <text x="400" y="190" font-weight="600" fill="#c4c4c4">0</text>
+        <text x="270" y="240">Authored Katas:</text>
+        <text x="400" y="240" font-weight="600" fill="#c4c4c4">{authored_katas}</text>
     </g>
     
     <!-- Dekorative Elemente -->
@@ -97,12 +116,12 @@ svg_content = f'''<svg xmlns="http://www.w3.org/2000/svg" width="500" height="30
     
     <!-- Fortschrittsbalken für Gesamtrank -->
     <rect x="30" y="255" width="440" height="10" fill="#2d333b" rx="5" ry="5"/>
-    <rect x="30" y="255" width="88.44000000000001" height="10" fill="#c4c4c4" rx="5" ry="5"/>
+    <rect x="30" y="255" width="{progress_width}" height="10" fill="#c4c4c4" rx="5" ry="5"/>
     <text x="30" y="280" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#8b949e">Rank Progress</text>
     
-    <!-- Update-Zeit -->
+    <!-- Dynamische Update-Zeit -->
     <text x="250" y="295" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#8b949e" opacity="0.8">
-        Updated: 2025-09-21 16:34 UTC
+        Updated: {current_time}
     </text>
 </svg>'''
 
@@ -111,4 +130,3 @@ with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     f.write(svg_content)
 
 print(f"SVG erfolgreich erstellt: {OUTPUT_FILE}")
-
