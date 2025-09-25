@@ -106,7 +106,7 @@ svg_content = f'''<svg xmlns="http://www.w3.org/2000/svg" width="540" height="36
         <g font-family="Consolas, Monaco, 'Courier New', monospace" font-size="10">'''
 
 # Sprach-Balken mit korrekter Einrückung innerhalb der Box
-bar_width = 400  # Reduzierte Breite damit alles in die Box passt
+bar_width = 320  # Reduzierte Breite damit Text daneben passt
 bar_height = 5
 bar_spacing = 8
 
@@ -117,9 +117,9 @@ for i, (lang_name, lang_rank, lang_score) in enumerate(top_languages):
     svg_content += f'''
             <!-- {lang_name} -->
             <text x="0" y="{y_pos + 4}" fill="#7d8590">{lang_name.upper()}</text>
-            <rect x="70" y="{y_pos}" width="{bar_width}" height="{bar_height}" fill="rgba(125, 133, 144, 0.2)" rx="2" ry="2"/>
-            <rect x="70" y="{y_pos}" width="{fill_width}" height="{bar_height}" fill="#e6edf3" rx="2" ry="2"/>
-            <text x="{bar_width + 70}" y="{y_pos + 4}" fill="#7d8590" text-anchor="end">{lang_score}</text>'''
+            <rect x="80" y="{y_pos}" width="{bar_width}" height="{bar_height}" fill="rgba(125, 133, 144, 0.2)" rx="2" ry="2"/>
+            <rect x="80" y="{y_pos}" width="{fill_width}" height="{bar_height}" fill="#e6edf3" rx="2" ry="2"/>
+            <text x="{bar_width + 90}" y="{y_pos + 4}" fill="#7d8590" text-anchor="start">{lang_score}</text>'''
 
 svg_content += f'''
         </g>
