@@ -29,7 +29,7 @@ sorted_languages = sorted(
 )
 
 top_languages = []
-for lang, data in sorted_languages[:4]:
+for lang, data in sorted_languages[:5]:
     lang_name = lang.capitalize()
     lang_rank = data.get("name", "Unknown")
     lang_score = data.get("score", 0)
@@ -39,98 +39,104 @@ for lang, data in sorted_languages[:4]:
 max_score = max([lang[2] for lang in top_languages]) if top_languages else 1
 current_time = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
 
-svg_content = f'''<svg xmlns="http://www.w3.org/2000/svg" width="500" height="320" viewBox="0 0 500 320">
+svg_content = f'''<svg xmlns="http://www.w3.org/2000/svg" width="520" height="340" viewBox="0 0 520 340">
     <defs>
         <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#0f1525"/>
-            <stop offset="100%" stop-color="#1a1f30"/>
+            <stop offset="0%" stop-color="#0f1117"/>
+            <stop offset="100%" stop-color="#181b25"/>
         </linearGradient>
         
-        <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stop-color="#c4c4c4"/>
             <stop offset="100%" stop-color="#0059ff"/>
         </linearGradient>
         
-        <filter id="neonGlow">
-            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-            <feMerge> 
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-        </filter>
-        
-        <filter id="textGlow">
-            <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#0059ff" flood-opacity="0.6"/>
+        <filter id="softGlow">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
         </filter>
     </defs>
     
     <!-- Hintergrund -->
-    <rect width="500" height="320" fill="url(#bgGradient)" rx="8" ry="8"/>
+    <rect width="520" height="340" fill="url(#bgGradient)" rx="8" ry="8"/>
     
-    <!-- Header -->
-    <text x="250" y="40" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="url(#textGradient)" filter="url(#textGlow)">
-        Codewars Stats
+    <!-- Header Box -->
+    <rect x="10" y="10" width="500" height="50" fill="rgba(22, 27, 34, 0.8)" rx="6" ry="6"/>
+    <text x="260" y="35" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#e6edf3">
+        Codewars Statistics
     </text>
-    
-    <text x="250" y="60" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">
+    <text x="260" y="50" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#7d8590">
         @{USERNAME}
     </text>
     
-    <!-- Hauptdaten - groß und prominent -->
-    <g font-family="Segoe UI, Arial, sans-serif">
-        <!-- Honor -->
-        <text x="100" y="100" text-anchor="middle" font-size="14" fill="rgba(255,255,255,0.8)">Honor</text>
-        <text x="100" y="125" text-anchor="middle" font-size="28" font-weight="700" fill="url(#textGradient)" filter="url(#neonGlow)">{honor}</text>
+    <!-- Hauptdaten Boxen -->
+    <g font-family="'Segoe UI', Arial, sans-serif">
+        <!-- Honor Box -->
+        <rect x="20" y="75" width="150" height="80" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+        <text x="95" y="100" text-anchor="middle" font-size="14" fill="#7d8590">Honor</text>
+        <text x="95" y="125" text-anchor="middle" font-size="26" font-weight="700" fill="#e6edf3">{honor}</text>
         
-        <!-- Rank -->
-        <text x="250" y="100" text-anchor="middle" font-size="14" fill="rgba(255,255,255,0.8)">Global Rank</text>
-        <text x="250" y="125" text-anchor="middle" font-size="28" font-weight="700" fill="url(#textGradient)" filter="url(#neonGlow)">
+        <!-- Rank Box -->
+        <rect x="185" y="75" width="150" height="80" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+        <text x="260" y="100" text-anchor="middle" font-size="14" fill="#7d8590">Global Rank</text>
+        <text x="260" y="125" text-anchor="middle" font-size="26" font-weight="700" fill="#e6edf3">
             #{leaderboard_position if leaderboard_position != "N/A" else "N/A"}
         </text>
         
-        <!-- Katas -->
-        <text x="400" y="100" text-anchor="middle" font-size="14" fill="rgba(255,255,255,0.8)">Katas</text>
-        <text x="400" y="125" text-anchor="middle" font-size="28" font-weight="700" fill="url(#textGradient)" filter="url(#neonGlow)">{completed_katas}</text>
+        <!-- Katas Box -->
+        <rect x="350" y="75" width="150" height="80" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+        <text x="425" y="100" text-anchor="middle" font-size="14" fill="#7d8590">Katas Solved</text>
+        <text x="425" y="125" text-anchor="middle" font-size="26" font-weight="700" fill="#e6edf3">{completed_katas}</text>
     </g>
     
-    <!-- Rank Info -->
-    <rect x="125" y="150" width="250" height="40" fill="rgba(255,255,255,0.05)" rx="6" ry="6"/>
-    <text x="250" y="165" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="rgba(255,255,255,0.9)">Overall Rank</text>
-    <text x="250" y="185" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="url(#textGradient)">{overall_rank} ({rank_score} pts)</text>
+    <!-- Rank Info Box -->
+    <rect x="20" y="170" width="480" height="50" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+    <text x="250" y="190" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#7d8590">Overall Rank</text>
+    <text x="250" y="210" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#e6edf3">
+        {overall_rank} • {rank_score} points
+    </text>
     
-    <!-- Sprachen Chart -->
-    <text x="250" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="rgba(255,255,255,0.9)">Top Languages</text>
+    <!-- Sprachen Box -->
+    <rect x="20" y="235" width="480" height="70" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+    <text x="250" y="255" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="600" fill="#e6edf3">Top Languages</text>
     
-    <g transform="translate(50 235)">'''
+    <!-- Sprach-Balken -->
+    <g transform="translate(40 270)">'''
 
 # Sprach-Balken
-bar_height = 20
-bar_spacing = 8
+bar_width = 400
+bar_height = 8
+bar_spacing = 12
+y_offset = 0
+
 for i, (lang_name, lang_rank, lang_score) in enumerate(top_languages):
-    bar_width = (lang_score / max_score) * 360
+    fill_width = (lang_score / max_score) * bar_width if max_score > 0 else 0
     y_pos = i * (bar_height + bar_spacing)
     
     svg_content += f'''
-        <rect x="0" y="{y_pos}" width="400" height="{bar_height}" fill="rgba(255,255,255,0.1)" rx="3" ry="3"/>
-        <rect x="0" y="{y_pos}" width="{bar_width}" height="{bar_height}" fill="rgba(0,89,255,0.6)" rx="3" ry="3"/>
-        <text x="5" y="{y_pos + 14}" font-size="12" fill="#ffffff" font-weight="600">{lang_name}</text>
-        <text x="395" y="{y_pos + 14}" text-anchor="end" font-size="11" fill="rgba(255,255,255,0.8)">{lang_score} pts</text>'''
+        <text x="0" y="{y_pos + 6}" font-size="11" fill="#7d8590">{lang_name}</text>
+        <rect x="80" y="{y_pos}" width="{bar_width}" height="{bar_height}" fill="rgba(125, 133, 144, 0.2)" rx="4" ry="4"/>
+        <rect x="80" y="{y_pos}" width="{fill_width}" height="{bar_height}" fill="url(#accentGradient)" rx="4" ry="4"/>
+        <text x="{bar_width + 85}" y="{y_pos + 6}" font-size="10" fill="#7d8590" text-anchor="end">{lang_score}</text>'''
 
 svg_content += f'''
     </g>
     
-    <!-- Footer -->
-    <g font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.6)">
-        <text x="20" y="310">Authored: {authored_katas}</text>
-        <text x="250" y="310" text-anchor="middle">Updated: {current_time}</text>
+    <!-- Footer Box -->
+    <rect x="20" y="320" width="480" height="40" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+    <g font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#7d8590">
+        <text x="40" y="335">Authored Katas: <tspan fill="#e6edf3" font-weight="600">{authored_katas}</tspan></text>
+        <text x="260" y="335" text-anchor="middle">Updated: {current_time}</text>
+        <text x="460" y="335" text-anchor="end">Rank: <tspan fill="#e6edf3" font-weight="600">{overall_rank}</tspan></text>
     </g>
     
-    <!-- Neon-Effekte -->
-    <circle cx="480" cy="20" r="3" fill="rgba(0,89,255,0.6)" filter="url(#neonGlow)"/>
-    <circle cx="490" cy="30" r="2" fill="rgba(0,89,255,0.4)" filter="url(#neonGlow)"/>
+    <!-- Subtile Akzente -->
+    <line x1="20" y1="165" x2="500" y2="165" stroke="rgba(0,89,255,0.3)" stroke-width="1"/>
+    <line x1="20" y1="230" x2="500" y2="230" stroke="rgba(0,89,255,0.3)" stroke-width="1"/>
+    <line x1="20" y1="315" x2="500" y2="315" stroke="rgba(0,89,255,0.3)" stroke-width="1"/>
 </svg>'''
 
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     f.write(svg_content)
 
-print(f"Neon-SVG erfolgreich erstellt: {OUTPUT_FILE}")
+print(f"Technisches SVG erfolgreich erstellt: {OUTPUT_FILE}")
