@@ -1,83 +1,86 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="320" viewBox="0 0 500 320">
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="340" viewBox="0 0 520 340">
     <defs>
         <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#0f1525"/>
-            <stop offset="100%" stop-color="#1a1f30"/>
+            <stop offset="0%" stop-color="#0f1117"/>
+            <stop offset="100%" stop-color="#181b25"/>
         </linearGradient>
         
-        <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stop-color="#c4c4c4"/>
             <stop offset="100%" stop-color="#0059ff"/>
         </linearGradient>
         
-        <filter id="neonGlow">
-            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-            <feMerge> 
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-        </filter>
-        
-        <filter id="textGlow">
-            <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#0059ff" flood-opacity="0.6"/>
+        <filter id="softGlow">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
         </filter>
     </defs>
     
     <!-- Hintergrund -->
-    <rect width="500" height="320" fill="url(#bgGradient)" rx="8" ry="8"/>
+    <rect width="520" height="340" fill="url(#bgGradient)" rx="8" ry="8"/>
     
-    <!-- Header -->
-    <text x="250" y="40" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="url(#textGradient)" filter="url(#textGlow)">
-        Codewars Stats
+    <!-- Header Box -->
+    <rect x="10" y="10" width="500" height="50" fill="rgba(22, 27, 34, 0.8)" rx="6" ry="6"/>
+    <text x="260" y="35" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#e6edf3">
+        Codewars Statistics
     </text>
-    
-    <text x="250" y="60" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">
+    <text x="260" y="50" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#7d8590">
         @AxdeExpe
     </text>
     
-    <!-- Hauptdaten - groß und prominent -->
-    <g font-family="Segoe UI, Arial, sans-serif">
-        <!-- Honor -->
-        <text x="100" y="100" text-anchor="middle" font-size="14" fill="rgba(255,255,255,0.8)">Honor</text>
-        <text x="100" y="125" text-anchor="middle" font-size="28" font-weight="700" fill="url(#textGradient)" filter="url(#neonGlow)">299</text>
+    <!-- Hauptdaten Boxen -->
+    <g font-family="'Segoe UI', Arial, sans-serif">
+        <!-- Honor Box -->
+        <rect x="20" y="75" width="150" height="80" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+        <text x="95" y="100" text-anchor="middle" font-size="14" fill="#7d8590">Honor</text>
+        <text x="95" y="125" text-anchor="middle" font-size="26" font-weight="700" fill="#e6edf3">299</text>
         
-        <!-- Rank -->
-        <text x="250" y="100" text-anchor="middle" font-size="14" fill="rgba(255,255,255,0.8)">Global Rank</text>
-        <text x="250" y="125" text-anchor="middle" font-size="28" font-weight="700" fill="url(#textGradient)" filter="url(#neonGlow)">
+        <!-- Rank Box -->
+        <rect x="185" y="75" width="150" height="80" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+        <text x="260" y="100" text-anchor="middle" font-size="14" fill="#7d8590">Global Rank</text>
+        <text x="260" y="125" text-anchor="middle" font-size="26" font-weight="700" fill="#e6edf3">
             #291523
         </text>
         
-        <!-- Katas -->
-        <text x="400" y="100" text-anchor="middle" font-size="14" fill="rgba(255,255,255,0.8)">Katas</text>
-        <text x="400" y="125" text-anchor="middle" font-size="28" font-weight="700" fill="url(#textGradient)" filter="url(#neonGlow)">23</text>
+        <!-- Katas Box -->
+        <rect x="350" y="75" width="150" height="80" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+        <text x="425" y="100" text-anchor="middle" font-size="14" fill="#7d8590">Katas Solved</text>
+        <text x="425" y="125" text-anchor="middle" font-size="26" font-weight="700" fill="#e6edf3">23</text>
     </g>
     
-    <!-- Rank Info -->
-    <rect x="125" y="150" width="250" height="40" fill="rgba(255,255,255,0.05)" rx="6" ry="6"/>
-    <text x="250" y="165" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="rgba(255,255,255,0.9)">Overall Rank</text>
-    <text x="250" y="185" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="url(#textGradient)">5 kyu (356 pts)</text>
+    <!-- Rank Info Box -->
+    <rect x="20" y="170" width="480" height="50" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+    <text x="250" y="190" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#7d8590">Overall Rank</text>
+    <text x="250" y="210" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#e6edf3">
+        5 kyu • 356 points
+    </text>
     
-    <!-- Sprachen Chart -->
-    <text x="250" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="rgba(255,255,255,0.9)">Top Languages</text>
+    <!-- Sprachen Box -->
+    <rect x="20" y="235" width="480" height="70" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+    <text x="250" y="255" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="600" fill="#e6edf3">Top Languages</text>
     
-    <g transform="translate(50 235)">
-        <rect x="0" y="0" width="400" height="20" fill="rgba(255,255,255,0.1)" rx="3" ry="3"/>
-        <rect x="0" y="0" width="360.0" height="20" fill="rgba(0,89,255,0.6)" rx="3" ry="3"/>
-        <text x="5" y="14" font-size="12" fill="#ffffff" font-weight="600">Javascript</text>
-        <text x="395" y="14" text-anchor="end" font-size="11" fill="rgba(255,255,255,0.8)">180 pts</text>
-        <rect x="0" y="28" width="400" height="20" fill="rgba(255,255,255,0.1)" rx="3" ry="3"/>
-        <rect x="0" y="28" width="352.0" height="20" fill="rgba(0,89,255,0.6)" rx="3" ry="3"/>
-        <text x="5" y="42" font-size="12" fill="#ffffff" font-weight="600">Python</text>
-        <text x="395" y="42" text-anchor="end" font-size="11" fill="rgba(255,255,255,0.8)">176 pts</text>
+    <!-- Sprach-Balken -->
+    <g transform="translate(40 270)">
+        <text x="0" y="6" font-size="11" fill="#7d8590">Javascript</text>
+        <rect x="80" y="0" width="400" height="8" fill="rgba(125, 133, 144, 0.2)" rx="4" ry="4"/>
+        <rect x="80" y="0" width="400.0" height="8" fill="url(#accentGradient)" rx="4" ry="4"/>
+        <text x="485" y="6" font-size="10" fill="#7d8590" text-anchor="end">180</text>
+        <text x="0" y="26" font-size="11" fill="#7d8590">Python</text>
+        <rect x="80" y="20" width="400" height="8" fill="rgba(125, 133, 144, 0.2)" rx="4" ry="4"/>
+        <rect x="80" y="20" width="391.1111111111111" height="8" fill="url(#accentGradient)" rx="4" ry="4"/>
+        <text x="485" y="26" font-size="10" fill="#7d8590" text-anchor="end">176</text>
     </g>
     
-    <!-- Footer -->
-    <g font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.6)">
-        <text x="20" y="310">Authored: 0</text>
-        <text x="250" y="310" text-anchor="middle">Updated: 2025-09-25 16:47 UTC</text>
+    <!-- Footer Box -->
+    <rect x="20" y="320" width="480" height="40" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+    <g font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#7d8590">
+        <text x="40" y="335">Authored Katas: <tspan fill="#e6edf3" font-weight="600">0</tspan></text>
+        <text x="260" y="335" text-anchor="middle">Updated: 2025-09-25 16:52 UTC</text>
+        <text x="460" y="335" text-anchor="end">Rank: <tspan fill="#e6edf3" font-weight="600">5 kyu</tspan></text>
     </g>
     
-    <!-- Neon-Effekte -->
-    <circle cx="480" cy="20" r="3" fill="rgba(0,89,255,0.6)" filter="url(#neonGlow)"/>
-    <circle cx="490" cy="30" r="2" fill="rgba(0,89,255,0.4)" filter="url(#neonGlow)"/>
+    <!-- Subtile Akzente -->
+    <line x1="20" y1="165" x2="500" y2="165" stroke="rgba(0,89,255,0.3)" stroke-width="1"/>
+    <line x1="20" y1="230" x2="500" y2="230" stroke="rgba(0,89,255,0.3)" stroke-width="1"/>
+    <line x1="20" y1="315" x2="500" y2="315" stroke="rgba(0,89,255,0.3)" stroke-width="1"/>
 </svg>
