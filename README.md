@@ -15,6 +15,6 @@
 
 ## 🌱 Learning  
 
-- Currently learning: Advanced Python  
+Currently learning: Advanced Python  
 
 </div>
