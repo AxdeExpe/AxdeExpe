@@ -50,10 +50,6 @@ svg_content = f'''<svg xmlns="http://www.w3.org/2000/svg" width="540" height="36
             <stop offset="0%" stop-color="#c4c4c4"/>
             <stop offset="100%" stop-color="#0059ff"/>
         </linearGradient>
-        
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap');
-        </style>
     </defs>
     
     <!-- Hintergrund -->
@@ -62,15 +58,15 @@ svg_content = f'''<svg xmlns="http://www.w3.org/2000/svg" width="540" height="36
     <!-- Header Box -->
     <rect x="20" y="20" width="500" height="60" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
     <rect x="20" y="20" width="500" height="2" fill="url(#accentGradient)"/>
-    <text x="270" y="45" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="18" font-weight="600" fill="#e6edf3">
+    <text x="270" y="45" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="18" font-weight="600" fill="#e6edf3">
         CODEWARS STATISTICS
     </text>
-    <text x="270" y="62" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#7d8590">
+    <text x="270" y="62" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="11" fill="#7d8590">
         @{USERNAME}
     </text>
     
     <!-- Hauptdaten Boxen -->
-    <g font-family="JetBrains Mono, monospace">
+    <g font-family="Consolas, Monaco, 'Courier New', monospace">
         <!-- Honor Box -->
         <rect x="20" y="100" width="150" height="80" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
         <rect x="20" y="100" width="150" height="2" fill="url(#accentGradient)"/>
@@ -95,19 +91,19 @@ svg_content = f'''<svg xmlns="http://www.w3.org/2000/svg" width="540" height="36
     <!-- Rank Info Box -->
     <rect x="20" y="200" width="500" height="50" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
     <rect x="20" y="200" width="500" height="2" fill="url(#accentGradient)"/>
-    <text x="270" y="220" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" fill="#7d8590">OVERALL RANK</text>
-    <text x="270" y="240" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="14" font-weight="600" fill="#e6edf3">
+    <text x="270" y="220" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="12" fill="#7d8590">OVERALL RANK</text>
+    <text x="270" y="240" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="14" font-weight="600" fill="#e6edf3">
         {overall_rank} • {rank_score} POINTS
     </text>
     
     <!-- Sprachen Box -->
     <rect x="20" y="270" width="500" height="60" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
     <rect x="20" y="270" width="500" height="2" fill="url(#accentGradient)"/>
-    <text x="270" y="290" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" font-weight="600" fill="#e6edf3">TOP LANGUAGES</text>
+    <text x="270" y="290" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="12" font-weight="600" fill="#e6edf3">TOP LANGUAGES</text>
     
     <!-- Sprach-Balken -->
     <g transform="translate(40 305)">
-        <g font-family="JetBrains Mono, monospace" font-size="11">'''
+        <g font-family="Consolas, Monaco, 'Courier New', monospace" font-size="11">'''
 
 # Sprach-Balken mit korrekter Einrückung
 bar_width = 420
@@ -132,7 +128,7 @@ svg_content += f'''
     <!-- Footer Box -->
     <rect x="20" y="345" width="500" height="30" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
     <rect x="20" y="345" width="500" height="2" fill="url(#accentGradient)"/>
-    <g font-family="JetBrains Mono, monospace" font-size="10" fill="#7d8590">
+    <g font-family="Consolas, Monaco, 'Courier New', monospace" font-size="10" fill="#7d8590">
         <text x="40" y="362">AUTHORED: <tspan fill="#e6edf3" font-weight="600">{authored_katas}</tspan></text>
         <text x="270" y="362" text-anchor="middle">UPDATED: {current_time}</text>
         <text x="480" y="362" text-anchor="end">RANK: <tspan fill="#e6edf3" font-weight="600">{overall_rank}</tspan></text>
