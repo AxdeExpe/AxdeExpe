@@ -56,59 +56,59 @@ svg_content = f'''<svg xmlns="http://www.w3.org/2000/svg" width="540" height="36
     <rect width="540" height="360" fill="url(#bgGradient)" rx="8" ry="8"/>
     
     <!-- Header Box -->
-    <rect x="20" y="20" width="500" height="60" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
-    <rect x="20" y="20" width="500" height="2" fill="url(#accentGradient)"/>
-    <text x="270" y="45" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="18" font-weight="600" fill="#e6edf3">
+    <rect x="20" y="15" width="500" height="50" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+    <rect x="20" y="15" width="500" height="2" fill="url(#accentGradient)"/>
+    <text x="270" y="35" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="16" font-weight="600" fill="#e6edf3">
         CODEWARS STATISTICS
     </text>
-    <text x="270" y="62" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="11" fill="#7d8590">
+    <text x="270" y="50" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="10" fill="#7d8590">
         @{USERNAME}
     </text>
     
-    <!-- Hauptdaten Boxen -->
+    <!-- Hauptdaten Boxen - Volle Breite nutzend -->
     <g font-family="Consolas, Monaco, 'Courier New', monospace">
         <!-- Honor Box -->
-        <rect x="20" y="100" width="150" height="80" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
-        <rect x="20" y="100" width="150" height="2" fill="url(#accentGradient)"/>
-        <text x="95" y="125" text-anchor="middle" font-size="12" fill="#7d8590">HONOR</text>
-        <text x="95" y="150" text-anchor="middle" font-size="24" font-weight="600" fill="#e6edf3">{honor}</text>
+        <rect x="20" y="80" width="160" height="70" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+        <rect x="20" y="80" width="160" height="2" fill="url(#accentGradient)"/>
+        <text x="100" y="100" text-anchor="middle" font-size="11" fill="#7d8590">HONOR</text>
+        <text x="100" y="120" text-anchor="middle" font-size="20" font-weight="600" fill="#e6edf3">{honor}</text>
         
         <!-- Rank Box -->
-        <rect x="185" y="100" width="150" height="80" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
-        <rect x="185" y="100" width="150" height="2" fill="url(#accentGradient)"/>
-        <text x="260" y="125" text-anchor="middle" font-size="12" fill="#7d8590">GLOBAL RANK</text>
-        <text x="260" y="150" text-anchor="middle" font-size="24" font-weight="600" fill="#e6edf3">
+        <rect x="190" y="80" width="160" height="70" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+        <rect x="190" y="80" width="160" height="2" fill="url(#accentGradient)"/>
+        <text x="270" y="100" text-anchor="middle" font-size="11" fill="#7d8590">GLOBAL RANK</text>
+        <text x="270" y="120" text-anchor="middle" font-size="20" font-weight="600" fill="#e6edf3">
             #{leaderboard_position if leaderboard_position != "N/A" else "N/A"}
         </text>
         
         <!-- Katas Box -->
-        <rect x="350" y="100" width="150" height="80" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
-        <rect x="350" y="100" width="150" height="2" fill="url(#accentGradient)"/>
-        <text x="425" y="125" text-anchor="middle" font-size="12" fill="#7d8590">KATAS SOLVED</text>
-        <text x="425" y="150" text-anchor="middle" font-size="24" font-weight="600" fill="#e6edf3">{completed_katas}</text>
+        <rect x="360" y="80" width="160" height="70" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+        <rect x="360" y="80" width="160" height="2" fill="url(#accentGradient)"/>
+        <text x="440" y="100" text-anchor="middle" font-size="11" fill="#7d8590">KATAS SOLVED</text>
+        <text x="440" y="120" text-anchor="middle" font-size="20" font-weight="600" fill="#e6edf3">{completed_katas}</text>
     </g>
     
     <!-- Rank Info Box -->
-    <rect x="20" y="200" width="500" height="50" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
-    <rect x="20" y="200" width="500" height="2" fill="url(#accentGradient)"/>
-    <text x="270" y="220" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="12" fill="#7d8590">OVERALL RANK</text>
-    <text x="270" y="240" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="14" font-weight="600" fill="#e6edf3">
+    <rect x="20" y="165" width="500" height="40" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+    <rect x="20" y="165" width="500" height="2" fill="url(#accentGradient)"/>
+    <text x="270" y="182" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="11" fill="#7d8590">OVERALL RANK</text>
+    <text x="270" y="197" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="12" font-weight="600" fill="#e6edf3">
         {overall_rank} • {rank_score} POINTS
     </text>
     
     <!-- Sprachen Box -->
-    <rect x="20" y="270" width="500" height="60" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
-    <rect x="20" y="270" width="500" height="2" fill="url(#accentGradient)"/>
-    <text x="270" y="290" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="12" font-weight="600" fill="#e6edf3">TOP LANGUAGES</text>
+    <rect x="20" y="220" width="500" height="90" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+    <rect x="20" y="220" width="500" height="2" fill="url(#accentGradient)"/>
+    <text x="270" y="238" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="11" font-weight="600" fill="#e6edf3">TOP LANGUAGES</text>
     
-    <!-- Sprach-Balken -->
-    <g transform="translate(40 305)">
-        <g font-family="Consolas, Monaco, 'Courier New', monospace" font-size="11">'''
+    <!-- Sprach-Balken - Innerhalb der Box -->
+    <g transform="translate(40 250)">
+        <g font-family="Consolas, Monaco, 'Courier New', monospace" font-size="10">'''
 
-# Sprach-Balken mit korrekter Einrückung
+# Sprach-Balken mit korrekter Einrückung innerhalb der Box
 bar_width = 420
-bar_height = 6
-bar_spacing = 12
+bar_height = 5
+bar_spacing = 8
 
 for i, (lang_name, lang_rank, lang_score) in enumerate(top_languages):
     fill_width = (lang_score / max_score) * bar_width if max_score > 0 else 0
@@ -116,26 +116,26 @@ for i, (lang_name, lang_rank, lang_score) in enumerate(top_languages):
     
     svg_content += f'''
             <!-- {lang_name} -->
-            <text x="0" y="{y_pos + 5}" fill="#7d8590">{lang_name.upper()}</text>
-            <rect x="80" y="{y_pos}" width="{bar_width}" height="{bar_height}" fill="rgba(125, 133, 144, 0.2)" rx="3" ry="3"/>
-            <rect x="80" y="{y_pos}" width="{fill_width}" height="{bar_height}" fill="#e6edf3" rx="3" ry="3"/>
-            <text x="{bar_width + 85}" y="{y_pos + 5}" fill="#7d8590" text-anchor="end">{lang_score}</text>'''
+            <text x="0" y="{y_pos + 4}" fill="#7d8590">{lang_name.upper()}</text>
+            <rect x="70" y="{y_pos}" width="{bar_width}" height="{bar_height}" fill="rgba(125, 133, 144, 0.2)" rx="2" ry="2"/>
+            <rect x="70" y="{y_pos}" width="{fill_width}" height="{bar_height}" fill="#e6edf3" rx="2" ry="2"/>
+            <text x="{bar_width + 75}" y="{y_pos + 4}" fill="#7d8590" text-anchor="end">{lang_score}</text>'''
 
 svg_content += f'''
         </g>
     </g>
     
-    <!-- Footer Box -->
-    <rect x="20" y="345" width="500" height="30" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
-    <rect x="20" y="345" width="500" height="2" fill="url(#accentGradient)"/>
-    <g font-family="Consolas, Monaco, 'Courier New', monospace" font-size="10" fill="#7d8590">
-        <text x="40" y="362">AUTHORED: <tspan fill="#e6edf3" font-weight="600">{authored_katas}</tspan></text>
-        <text x="270" y="362" text-anchor="middle">UPDATED: {current_time}</text>
-        <text x="480" y="362" text-anchor="end">RANK: <tspan fill="#e6edf3" font-weight="600">{overall_rank}</tspan></text>
+    <!-- Footer Box - Innerhalb des Bildes -->
+    <rect x="20" y="325" width="500" height="25" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
+    <rect x="20" y="325" width="500" height="2" fill="url(#accentGradient)"/>
+    <g font-family="Consolas, Monaco, 'Courier New', monospace" font-size="9" fill="#7d8590">
+        <text x="40" y="340">AUTHORED: <tspan fill="#e6edf3" font-weight="600">{authored_katas}</tspan></text>
+        <text x="270" y="340" text-anchor="middle">UPDATED: {current_time}</text>
+        <text x="480" y="340" text-anchor="end">RANK: <tspan fill="#e6edf3" font-weight="600">{overall_rank}</tspan></text>
     </g>
 </svg>'''
 
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     f.write(svg_content)
 
-print(f"Technisches SVG erfolgreich erstellt: {OUTPUT_FILE}")
+print(f"Korrigiertes SVG erfolgreich erstellt: {OUTPUT_FILE}")
