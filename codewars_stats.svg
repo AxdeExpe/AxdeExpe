@@ -1,108 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="540" height="360" viewBox="0 0 540 360">
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="320" viewBox="0 0 500 320">
     <defs>
         <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#0a0f1c"/>
-            <stop offset="100%" stop-color="#13182b"/>
+            <stop offset="0%" stop-color="#0f1525"/>
+            <stop offset="100%" stop-color="#1a1f30"/>
         </linearGradient>
         
-        <linearGradient id="glassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="rgba(0,89,255,0.3)"/>
-            <stop offset="100%" stop-color="rgba(0,89,255,0.1)"/>
+        <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#c4c4c4"/>
+            <stop offset="100%" stop-color="#0059ff"/>
         </linearGradient>
         
-        <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="rgba(0,89,255,0.8)"/>
-            <stop offset="100%" stop-color="rgba(0,200,255,0.8)"/>
-        </linearGradient>
-        
-        <filter id="glassEffect" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="glass"/>
-        </filter>
-        
-        <filter id="glow">
-            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+        <filter id="neonGlow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
             <feMerge> 
                 <feMergeNode in="coloredBlur"/>
                 <feMergeNode in="SourceGraphic"/>
             </feMerge>
         </filter>
+        
+        <filter id="textGlow">
+            <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#0059ff" flood-opacity="0.6"/>
+        </filter>
     </defs>
     
-    <!-- Hintergrund mit modernem Gradient -->
-    <rect width="540" height="360" fill="url(#bgGradient)" rx="12" ry="12"/>
+    <!-- Hintergrund -->
+    <rect width="500" height="320" fill="url(#bgGradient)" rx="8" ry="8"/>
     
-    <!-- Glas-Effekt Header -->
-    <rect width="540" height="70" fill="url(#glassGradient)" filter="url(#glassEffect)" rx="12" ry="12"/>
-    <rect x="10" y="10" width="520" height="50" fill="rgba(0,89,255,0.15)" rx="8" ry="8"/>
-    
-    <!-- Haupttitel -->
-    <text x="270" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff" filter="url(#glow)">
-        AxdeExpe's Codewars Statistics
+    <!-- Header -->
+    <text x="250" y="40" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="url(#textGradient)" filter="url(#textGlow)">
+        Codewars Stats
     </text>
     
-    <!-- Statistische Karten -->
+    <text x="250" y="60" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">
+        @AxdeExpe
+    </text>
+    
+    <!-- Hauptdaten - groß und prominent -->
     <g font-family="Segoe UI, Arial, sans-serif">
-        <!-- Honor Card -->
-        <rect x="20" y="80" width="150" height="80" fill="rgba(255,255,255,0.05)" rx="8" ry="8"/>
-        <text x="95" y="105" text-anchor="middle" font-size="16" font-weight="600" fill="#ffffff">Honor</text>
-        <text x="95" y="135" text-anchor="middle" font-size="24" font-weight="700" fill="rgba(0,89,255,0.9)">299</text>
+        <!-- Honor -->
+        <text x="100" y="100" text-anchor="middle" font-size="14" fill="rgba(255,255,255,0.8)">Honor</text>
+        <text x="100" y="125" text-anchor="middle" font-size="28" font-weight="700" fill="url(#textGradient)" filter="url(#neonGlow)">299</text>
         
-        <!-- Rank Card -->
-        <rect x="185" y="80" width="150" height="80" fill="rgba(255,255,255,0.05)" rx="8" ry="8"/>
-        <text x="260" y="105" text-anchor="middle" font-size="16" font-weight="600" fill="#ffffff">Global Rank</text>
-        <text x="260" y="135" text-anchor="middle" font-size="24" font-weight="700" fill="rgba(0,89,255,0.9)">
+        <!-- Rank -->
+        <text x="250" y="100" text-anchor="middle" font-size="14" fill="rgba(255,255,255,0.8)">Global Rank</text>
+        <text x="250" y="125" text-anchor="middle" font-size="28" font-weight="700" fill="url(#textGradient)" filter="url(#neonGlow)">
             #291523
         </text>
         
-        <!-- Katas Card -->
-        <rect x="350" y="80" width="170" height="80" fill="rgba(255,255,255,0.05)" rx="8" ry="8"/>
-        <text x="435" y="105" text-anchor="middle" font-size="16" font-weight="600" fill="#ffffff">Katas Completed</text>
-        <text x="435" y="135" text-anchor="middle" font-size="24" font-weight="700" fill="rgba(0,89,255,0.9)">23</text>
+        <!-- Katas -->
+        <text x="400" y="100" text-anchor="middle" font-size="14" fill="rgba(255,255,255,0.8)">Katas</text>
+        <text x="400" y="125" text-anchor="middle" font-size="28" font-weight="700" fill="url(#textGradient)" filter="url(#neonGlow)">23</text>
     </g>
     
-    <!-- Sprachen-Chart Bereich -->
-    <rect x="20" y="180" width="500" height="140" fill="rgba(255,255,255,0.02)" rx="8" ry="8"/>
-    <text x="270" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#ffffff">
-        Top Languages Score Distribution
-    </text>
+    <!-- Rank Info -->
+    <rect x="125" y="150" width="250" height="40" fill="rgba(255,255,255,0.05)" rx="6" ry="6"/>
+    <text x="250" y="165" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="rgba(255,255,255,0.9)">Overall Rank</text>
+    <text x="250" y="185" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="url(#textGradient)">5 kyu (356 pts)</text>
     
-    <!-- Balkendiagramm für Sprachen -->
-    <g transform="translate(30 210)">
-        <!-- Javascript Bar -->
-        <rect x="0" y="0.0" width="400" height="55.0" fill="rgba(255,255,255,0.1)" rx="3" ry="3"/>
-        <rect x="0" y="0.0" width="400.0" height="55.0" fill="yellow" opacity="0.8" rx="3" ry="3"/>
-        <text x="5" y="51.0" font-size="11" fill="#ffffff">Javascript</text>
-        <text x="410" y="51.0" font-size="11" fill="rgba(255,255,255,0.7)">180 pts</text>
-        <!-- Python Bar -->
-        <rect x="0" y="60.0" width="400" height="55.0" fill="rgba(255,255,255,0.1)" rx="3" ry="3"/>
-        <rect x="0" y="60.0" width="391.1111111111111" height="55.0" fill="yellow" opacity="0.8" rx="3" ry="3"/>
-        <text x="5" y="111.0" font-size="11" fill="#ffffff">Python</text>
-        <text x="410" y="111.0" font-size="11" fill="rgba(255,255,255,0.7)">176 pts</text>
+    <!-- Sprachen Chart -->
+    <text x="250" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="rgba(255,255,255,0.9)">Top Languages</text>
+    
+    <g transform="translate(50 235)">
+        <rect x="0" y="0" width="400" height="20" fill="rgba(255,255,255,0.1)" rx="3" ry="3"/>
+        <rect x="0" y="0" width="360.0" height="20" fill="rgba(0,89,255,0.6)" rx="3" ry="3"/>
+        <text x="5" y="14" font-size="12" fill="#ffffff" font-weight="600">Javascript</text>
+        <text x="395" y="14" text-anchor="end" font-size="11" fill="rgba(255,255,255,0.8)">180 pts</text>
+        <rect x="0" y="28" width="400" height="20" fill="rgba(255,255,255,0.1)" rx="3" ry="3"/>
+        <rect x="0" y="28" width="352.0" height="20" fill="rgba(0,89,255,0.6)" rx="3" ry="3"/>
+        <text x="5" y="42" font-size="12" fill="#ffffff" font-weight="600">Python</text>
+        <text x="395" y="42" text-anchor="end" font-size="11" fill="rgba(255,255,255,0.8)">176 pts</text>
     </g>
     
-    <!-- Progress Bars -->
-    <g transform="translate(20 330)">
-        <!-- Rank Progress -->
-        <text x="0" y="15" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.8)">Rank Progress: 5 kyu</text>
-        <rect x="0" y="20" width="440" height="8" fill="rgba(255,255,255,0.1)" rx="4" ry="4"/>
-        <rect x="0" y="20" width="156.64" height="8" fill="url(#progressGradient)" rx="4" ry="4"/>
-        
-        <!-- Completion Progress -->
-        <text x="0" y="45" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.8)">Katas Completion</text>
-        <rect x="0" y="50" width="440" height="8" fill="rgba(255,255,255,0.1)" rx="4" ry="4"/>
-        <rect x="0" y="50" width="20.24" height="8" fill="rgba(0,200,255,0.8)" rx="4" ry="4"/>
+    <!-- Footer -->
+    <g font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.6)">
+        <text x="20" y="310">Authored: 0</text>
+        <text x="250" y="310" text-anchor="middle">Updated: 2025-09-25 16:47 UTC</text>
     </g>
     
-    <!-- Footer mit Authored Katas und Update-Time -->
-    <g font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">
-        <text x="20" y="355">Authored Katas: 0</text>
-        <text x="270" y="355" text-anchor="middle">Updated: 2025-09-25 16:40 UTC</text>
-        <text x="520" y="355" text-anchor="end">@AxdeExpe</text>
-    </g>
-    
-    <!-- Dekorative Elemente -->
-    <circle cx="520" cy="30" r="4" fill="rgba(0,89,255,0.6)"/>
-    <circle cx="530" cy="20" r="3" fill="rgba(0,89,255,0.4)"/>
-    <circle cx="510" cy="40" r="2" fill="rgba(0,89,255,0.3)"/>
+    <!-- Neon-Effekte -->
+    <circle cx="480" cy="20" r="3" fill="rgba(0,89,255,0.6)" filter="url(#neonGlow)"/>
+    <circle cx="490" cy="30" r="2" fill="rgba(0,89,255,0.4)" filter="url(#neonGlow)"/>
 </svg>
