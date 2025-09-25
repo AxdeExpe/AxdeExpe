@@ -30,21 +30,21 @@
         <rect x="20" y="80" width="160" height="70" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
         <rect x="20" y="80" width="160" height="2" fill="url(#accentGradient)"/>
         <text x="100" y="100" text-anchor="middle" font-size="11" fill="#7d8590">HONOR</text>
-        <text x="100" y="120" text-anchor="middle" font-size="20" font-weight="600" fill="#e6edf3">299</text>
+        <text x="100" y="120" text-anchor="middle" font-size="20" font-weight="600" fill="#e6edf3">301</text>
         
         <!-- Rank Box -->
         <rect x="190" y="80" width="160" height="70" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
         <rect x="190" y="80" width="160" height="2" fill="url(#accentGradient)"/>
         <text x="270" y="100" text-anchor="middle" font-size="11" fill="#7d8590">GLOBAL RANK</text>
         <text x="270" y="120" text-anchor="middle" font-size="20" font-weight="600" fill="#e6edf3">
-            #291523
+            #288095
         </text>
         
         <!-- Katas Box -->
         <rect x="360" y="80" width="160" height="70" fill="rgba(22, 27, 34, 0.9)" rx="6" ry="6"/>
         <rect x="360" y="80" width="160" height="2" fill="url(#accentGradient)"/>
         <text x="440" y="100" text-anchor="middle" font-size="11" fill="#7d8590">KATAS SOLVED</text>
-        <text x="440" y="120" text-anchor="middle" font-size="20" font-weight="600" fill="#e6edf3">23</text>
+        <text x="440" y="120" text-anchor="middle" font-size="20" font-weight="600" fill="#e6edf3">24</text>
     </g>
     
     <!-- Rank Info Box -->
@@ -52,7 +52,7 @@
     <rect x="20" y="165" width="500" height="2" fill="url(#accentGradient)"/>
     <text x="270" y="182" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="11" fill="#7d8590">OVERALL RANK</text>
     <text x="270" y="197" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="12" font-weight="600" fill="#e6edf3">
-        5 kyu • 356 POINTS
+        5 kyu • 358 POINTS
     </text>
     
     <!-- Sprachen Box -->
@@ -71,8 +71,8 @@
             <!-- Python -->
             <text x="0" y="17" fill="#7d8590">PYTHON</text>
             <rect x="80" y="13" width="320" height="5" fill="rgba(125, 133, 144, 0.2)" rx="2" ry="2"/>
-            <rect x="80" y="13" width="312.88888888888886" height="5" fill="#e6edf3" rx="2" ry="2"/>
-            <text x="410" y="17" fill="#7d8590" text-anchor="start">176</text>
+            <rect x="80" y="13" width="316.44444444444446" height="5" fill="#e6edf3" rx="2" ry="2"/>
+            <text x="410" y="17" fill="#7d8590" text-anchor="start">178</text>
         </g>
     </g>
     
@@ -81,7 +81,7 @@
     <rect x="20" y="325" width="500" height="2" fill="url(#accentGradient)"/>
     <g font-family="Consolas, Monaco, 'Courier New', monospace" font-size="9" fill="#7d8590">
         <text x="40" y="340">AUTHORED: <tspan fill="#e6edf3" font-weight="600">0</tspan></text>
-        <text x="270" y="340" text-anchor="middle">UPDATED: 2025-09-25 18:33 UTC</text>
+        <text x="270" y="340" text-anchor="middle">UPDATED: 2025-09-25 19:19 UTC</text>
         <text x="480" y="340" text-anchor="end">RANK: <tspan fill="#e6edf3" font-weight="600">5 kyu</tspan></text>
     </g>
 </svg>
