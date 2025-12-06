@@ -1,4 +1,5 @@
 <div align="center">
+
 ## 🏆 Codewars Stats  
 
 ![Codewars Stats](codewars_stats.svg)  
