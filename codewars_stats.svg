@@ -81,7 +81,7 @@
     <rect x="20" y="325" width="500" height="2" fill="url(#accentGradient)"/>
     <g font-family="Consolas, Monaco, 'Courier New', monospace" font-size="9" fill="#7d8590">
         <text x="40" y="340">AUTHORED: <tspan fill="#e6edf3" font-weight="600">0</tspan></text>
-        <text x="270" y="340" text-anchor="middle">UPDATED: 2025-12-19 04:40 UTC</text>
+        <text x="270" y="340" text-anchor="middle">UPDATED: 2025-12-19 05:27 UTC</text>
         <text x="480" y="340" text-anchor="end">RANK: <tspan fill="#e6edf3" font-weight="600">5 kyu</tspan></text>
     </g>
 </svg>
